@@ -3,19 +3,46 @@
 #include <list>
 
 struct Edge {
-	int src, dest, weight;
+	int src, dest;
+	Edge(int src, int dest) : src(src), dest(dest) {}
 };
 
-struct Graph {
+
+// Directed Graph
+class Graph {
+public:
 	std::vector<std::list<int>> adjList;
-
-	Graph(const Edge* edges) {
-
+	Graph(const std::vector<Edge>& edges, int n) {
+		adjList.resize(n);
+		for (Edge e : edges) {
+			add_edge(e);
+		}
 	}
 
-	Graph(const std::vector<Edge>& edges) {
-
+	void add_vertex(const int& count = 1) {
+		adjList.resize(adjList.size + count);
 	}
+
+	void add_edge(const Edge& e) {
+		(*this)[e.src].push_back(e.dest);
+	}
+
+	std::list<int>& operator[](const int& v) {
+		return adjList[v];
+	}
+
+	class EdgeIterator {
+		int v;
+		std::list<int>::iterator iter;
+	public:
+		Edge&& operator*() {
+			return Edge(v, *iter);
+		}
+
+		EdgeIterator& operator++() {
+
+		}
+	};
 
 };
 
