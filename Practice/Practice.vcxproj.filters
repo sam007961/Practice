@@ -18,5 +18,11 @@
     <ClInclude Include="Graph\Graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Array\Array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="List\List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

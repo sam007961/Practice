@@ -20,7 +20,7 @@ public:
 	}
 
 	void add_vertex(const int& count = 1) {
-		adjList.resize(adjList.size + count);
+		adjList.resize(adjList.size() + count);
 	}
 
 	void add_edge(const Edge& e) {
